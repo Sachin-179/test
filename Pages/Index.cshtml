@@ -1,0 +1,25 @@
+﻿@page
+@model CsvToSqlConverter.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <h2 class="mt-5">Upload CSV File</h2>
+    <p>Upload a CSV file to convert its data into SQL format and insert into the database.</p>
+
+    @if (ViewData["Message"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @ViewData["Message"]
+        </div>
+    }
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="uploadedFile">Choose CSV file</label>
+            <input type="file" class="form-control-file" id="uploadedFile" name="uploadedFile">
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
